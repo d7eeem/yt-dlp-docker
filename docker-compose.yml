@@ -1,0 +1,20 @@
+---
+version: '3'
+services:
+  yt-dlp:
+    image: "yt-dlp"
+    volumes:
+      - /mnt/storage/archive/web/dl/yt-dlp-media/:/media
+    network_mode: container:wireguard-proxy
+    restart: unless-stopped
+
+# ---
+# version: '2'
+# services:
+#     ripme:
+#         image: yt-dlp
+#         container_name: yt-dlp
+#         volumes:
+#             - '/home/id7eeem/software/docker/yt-dlp/media:/media'
+#         network_mode: container:mullvadvpn-gluetun-1
+#         restart: unless-stopped
